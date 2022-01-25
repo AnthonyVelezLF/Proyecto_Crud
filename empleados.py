@@ -1,31 +1,18 @@
-from categorias import Categoria
+from cargo import Cargo
+from departamentos import Departamento
 
+class Empleado:
+    secuencia=1
+    empleados = [{"codigo":1,"nombre":"Dan","cedula":"0914192182","cargo":1,"departamento":1,"sueldo":500.50}]
 
-class Articulo:
-  secuencia=2             
-  articulos = [ {"codigo":1,"descripcion":"Coca Cola","categoria":2,"precio":1.5,"stock":100},
-              {"codigo":2,"descripcion":"Vita Leche","categoria":1,"precio":1,"stock":50},
-             ]
+    def __init__(self,nombre,cedula,codCargo,codDepartamento,sueldo):
+        Empleado.secuencia +=1
+        self.codigo=Empleado.secuencia
+        self.nombre=nombre
+        self.cedula=cedula
+        self.cargo=codCargo
+        self.departamento=codDepartamento
+        self.sueldo=sueldo
 
-  def __init__(self,descrip,codCategoria,precio,stock):
-    Articulo.secuencia +=1
-    self.codigo=Articulo.secuencia
-    self.descripcion=descrip
-    self.categoria=codCategoria
-    self.precio=precio
-    self.stock=stock
-  
-    
-  def mostrar(self):
-    print("{} - {} - {} - {} - {} ".format(self.codigo,self.descripcion,self.categoria,self.precio,self.stock))
-
-  def registro(self):
-    return {"codigo":self.codigo,"descripcion":self.descripcion,"categoria":self.categoria,"precio":self.precio,"stock":self.stock}
-#print(Articulo.articulos)
-
-# art = Articulo("Pepsi",2,1.5,100)
-# #art.mostrar()
-# articulo = art.registro()
-# #print(articulo)
-# Articulo.articulos.append(articulo)
-# print(Articulo.articulos)
+    def registro(self):
+        return {"codigo":self.codigo,"nombre":self.nombre,"cedula":self.cedula,"cargo":self.cargo,"departamento":self.departamento,"sueldo":self.sueldo}
