@@ -1,8 +1,8 @@
-# import os
-# os.system("cls")
+#No se usa
 class Calculo:
   pass
 
+#Para repetir listado
 class Helper:
   def __init__(self):
     x=10
@@ -12,8 +12,4 @@ class Helper:
     for opcion in opciones:
       print(opcion)
     opc = input("Elija Opcion[1...{}]: ".format(len(opciones)))
-    return opc
-
-# help = Helper()
-# opcion = help.menu(["1) Primo","2) Fibonacci","3) Amigos","4) Salir"],"Menu Ejercicios")
-# print(opcion)
+    return opc 
